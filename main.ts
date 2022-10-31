@@ -10,18 +10,18 @@ const deno = new Dinosaur({
   description: "The fastest dinosaur ever lived."
 });
 
-// Insert deno.
+// // Insert deno.
 await deno.save();
 
 // Find Deno by name.
 const denoFromMongoDb = await Dinosaur.findOne({ name: "Deno" });
-console.log(denoFromMongoDb);
+console.log(`Finding Deno in MongoDB -- \n  ${denoFromMongoDb.name}: ${denoFromMongoDb.description}`);
 
 // Update description for Deno and save it.
 await denoFromMongoDb.updateDescription("The fastest and most secure dinosaur ever lived.");
 
 // Check MongoDB to see Deno's updated description.
 const newDenoFromMongoDb = await Dinosaur.findOne({ name: "Deno" });
-console.log(newDenoFromMongoDb);
+console.log(`Finding Deno (again) -- \n  ${newDenoFromMongoDb.name}: ${newDenoFromMongoDb.description}`);
 
 

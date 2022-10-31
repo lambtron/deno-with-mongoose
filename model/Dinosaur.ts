@@ -21,13 +21,5 @@ dinosaurSchema.methods = {
   }
 }
 
-// Statics.
-dinosaurSchema.statics = {
-  // Find dinosaur by name.
-  findDinosaurByName: async function(name: string) {
-    return await this.findOne({ name });
-  }
-}
-
 // Export model.
 export default model("Dinosaur", dinosaurSchema);
